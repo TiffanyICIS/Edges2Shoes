@@ -1,0 +1,4 @@
+.venv/
+IMAGES_TO_PROCESS/
+model/__pycache__/
+model/checkpoints/
