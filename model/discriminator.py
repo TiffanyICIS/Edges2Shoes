@@ -19,7 +19,6 @@ class Discriminator(nn.Module):
         self.c256 = CkBLOCK(128, 256, padding = 1)
         self.c512 = CkBLOCK(256, 512, padding = 1, stride = 1)
         self.fin_conv = nn.Conv2d(in_channels=512, out_channels=1, kernel_size=4, stride=1, padding = 1, padding_mode='reflect')
-        self.sigmoid = nn.Sigmoid()
         
     def forward(self, x, y):
         x = torch.cat([x,y], dim=1)
@@ -27,6 +26,6 @@ class Discriminator(nn.Module):
         x = self.c128(x)
         x = self.c256(x)
         x = self.c512(x)
-        x = self.sigmoid(self.fin_conv(x))
+        x = self.fin_conv(x)
         return x
         
