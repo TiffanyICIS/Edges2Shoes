@@ -33,5 +33,5 @@ class ShoesDataset(Dataset):
         return input_image, target_image
 
 
-# train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle = True, num_workers=NUM_WORKERS)
-# val_dataloader = DataLoader(val_dataset, batch_size=10, shuffle = False)
+# train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle = True, num_workers=NUM_WORKERS, drop_last = True)
+# val_dataloader = DataLoader(val_dataset, batch_size=10, shuffle = False, drop_last = True)
